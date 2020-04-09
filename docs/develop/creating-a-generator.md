@@ -10,5 +10,3 @@ The generator simply needs to implement the
 ## Further reading
 
 [Back to development index](index.md)
-
-[How it works](how-it-works.md)
