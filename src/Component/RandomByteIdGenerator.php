@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (C) GrizzIT, Inc. All rights reserved.
  * See LICENSE for license details.
@@ -11,7 +12,7 @@ use GrizzIt\Identifier\Common\IdGeneratorInterface;
 class RandomByteIdGenerator implements IdGeneratorInterface
 {
     /** @var int */
-    private $bytes;
+    private int $bytes;
 
     /**
      * Constructor.

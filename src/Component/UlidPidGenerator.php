@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (C) GrizzIT, Inc. All rights reserved.
  * See LICENSE for license details.
@@ -21,7 +22,7 @@ class UlidPidGenerator extends UlidGenerator
         $chars = '';
         for ($i = 0; $i < 4; $i++) {
             $mod = $pid % 32;
-            $chars = static::CROCKFORD_BASE32[$mod].$chars;
+            $chars = static::CROCKFORD_BASE32[$mod] . $chars;
             $pid = ($pid - $mod) / strlen(static::CROCKFORD_BASE32);
         }
 

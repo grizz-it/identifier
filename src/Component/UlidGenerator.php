@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (C) GrizzIT, Inc. All rights reserved.
  * See LICENSE for license details.
@@ -15,21 +16,21 @@ class UlidGenerator implements IdGeneratorInterface
      *
      * @var string
      */
-    const CROCKFORD_BASE32 = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
+    public const CROCKFORD_BASE32 = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
 
     /**
      * The last time that was used to generate a ULID.
      *
      * @var int
      */
-    private $lastTime;
+    private ?int $lastTime = null;
 
     /**
      * The last randomized array.
      *
      * @var int[]
      */
-    private $lastRandom = [];
+    private array $lastRandom = [];
 
     /**
      * Generates a ULID.
@@ -43,7 +44,7 @@ class UlidGenerator implements IdGeneratorInterface
 
         for ($i = 0; $i < 10; $i++) {
             $mod = $currentTime % 32;
-            $chars = static::CROCKFORD_BASE32[$mod].$chars;
+            $chars = static::CROCKFORD_BASE32[$mod] . $chars;
             $currentTime = ($currentTime - $mod) / strlen(
                 static::CROCKFORD_BASE32
             );
