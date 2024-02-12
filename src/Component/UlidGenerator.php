@@ -71,7 +71,7 @@ class UlidGenerator implements IdGeneratorInterface
      */
     private function getCurrentTime(): int
     {
-        return microtime(true) * 1000;
+        return (int) (microtime(true) * 1000);
     }
 
     /**
